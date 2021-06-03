@@ -1,0 +1,682 @@
+:root {
+    --clr: #ff5d7d;
+    --clrDark: #e63d5e;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.button {
+    min-width: 190px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: none;
+    display: inline-block;
+    color: #000;
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    transition: 0.2s all ease;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* .button:hover {
+  background: #f2f2f2;
+} */
+
+.button--download {
+    color: #fff;
+    background: #424b67;
+    border-radius: 10px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+}
+
+.dropCaret {
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    background: #28C291;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button--download:hover {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1160px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+#image-original {
+    width: 100%;
+}
+
+.mockup-box {
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mockup-left {
+    width: calc(100% - 350px);
+    padding-right: 20px;
+}
+
+.mockup-holder {
+    position: relative;
+}
+
+.mockup-right {
+    width: 350px;
+    padding: 20px;
+    margin: 20px 0 0;
+    box-shadow: 0 20px 44px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.breadcrum {
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.breadcrum li {
+    position: relative;
+}
+
+.breadcrum li span {
+    margin-right: 10px;
+    margin-left: 5px;
+    color: #E0E0E5;
+}
+
+.breadcrum li,
+.breadcrum li a {
+    font-size: 12px;
+    color: #A0A1AC;
+    font-weight: 500;
+}
+
+.breadcrum li a {
+    text-decoration: underline;
+}
+
+.breadcrum li a:hover {
+    color: var(--clr);
+}
+
+.mockup-right h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.mockup-right h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 17px;
+}
+
+.mockup-right h3 span {
+    float: right;
+    opacity: 0.5;
+}
+
+.mockup-right hr {
+    margin: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.mock-canvas {
+    position: relative;
+}
+
+.mock-canvas img {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.UploadBtn {
+    margin: 20px 0;
+}
+
+.UploadBtn input {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.UploadBtn label {
+    margin: 0;
+    width: 100%;
+    line-height: 30px;
+}
+
+.placeholder-box {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.popCancel {
+    font-size: 14px;
+    color: #000;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+
+.popCancel:hover {
+    color: var(--clr);
+}
+
+.external-canvas-up {
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.external-canvas {
+    position: absolute;
+    top: 0;
+    z-index: -9999;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    width: 500px;
+    left: 0;
+}
+
+
+
+#genImgCanvas,
+#displaceImgCanvas,
+#canvasColor {
+    display: none;
+}
+
+#canvasStart {
+    width: 100%;
+}
+
+#image-watermark {
+    width: 100%;
+}
+
+
+.bgColorBox {
+    display: none;
+}
+
+
+#image-shadow {
+    mix-blend-mode: multiply;
+}
+
+#screenCanvas,
+#image-shadow,
+#image-extra {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.colorBoxUp {
+    position: relative;
+}
+
+.colorBox {
+    background: transparent;
+    border: 1px solid #DEDEDE;
+    border-radius: 10px;
+    padding: 0 20px;
+    padding-left: 60px;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 2px;
+    position: relative;
+    width: 100%;
+}
+
+.clrRound {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FF5F57;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: -1;
+    margin-top: -15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.clrName {
+    font-size: 18px;
+    color: #A0A1AC;
+    font-weight: 400;
+    z-index: -1;
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+
+.space {
+    margin-bottom: 30px;
+}
+
+.uploadImg {
+    position: relative;
+    border: 1px dashed #A0A1AC;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    padding-left: 80px;
+    width: 100%;
+    background: transparent;
+    font-size: 18px;
+    color: #A0A1AC;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+.uploadImg span {
+    width: 40px;
+    height: 40px;
+    background: #FF5F57;
+    margin-top: -20px;
+    z-index: 1;
+}
+
+.inpBox {
+    font-size: 18px;
+    color: #A0A1AC;
+    font-weight: 400;
+    border: 0;
+    background: #F4F5FB;
+    padding: 0 20px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.inpBox:focus {
+    border: 0;
+    outline: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: #fff;
+}
+
+header.fixHeader {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.14);
+}
+
+header.fixHeader .header {
+    height: 70px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    transition: 0.2s all ease;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    margin-left: 40px;
+}
+
+.navigation ul li a {
+    font-size: 16px;
+    color: #1F2566;
+    font-weight: 500;
+}
+
+.navigation ul li a:hover,
+.navigation ul li a.active {
+    color: #4A63F1;
+    text-decoration: none;
+}
+
+.getStarted {
+    background: #4A63F1;
+    border: 0;
+    height: 45px;
+    padding: 0 20px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.mainContainer {
+    background: #F8F8F8;
+    padding: 20px 0;
+}
+
+.relatedContainer {
+    padding: 60px 0;
+}
+
+.relatedContainer h3 {
+    font-size: 36px;
+    color: #000;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.rel-box {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.rel-box li {
+    padding: 0 15px;
+    width: 25%;
+    height: 245px;
+    margin-bottom: 30px;
+}
+
+.rel-box li a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.rel-box li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caret {
+    margin-left: 0px;
+    border-top: 7px dashed;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+
+.f-row {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+    flex-wrap: wrap;
+}
+
+.f-col {
+    padding: 0 15px;
+}
+
+.f-3 .f-col {
+    width: 33.3333%;
+}
+
+.mockHld {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.abs-div {
+    position: absolute;
+    /* background: red; */
+    z-index: 0;
+}
+
+.abs-div1 {
+    left: 15%;
+    top: 18%;
+    width: 70%;
+    height: 46%;
+}
+
+.abs-div2 {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 73%;
+}
+
+.mainFrame {
+    z-index: 2;
+    position: relative;
+}
+
+.cropped {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #fff;
+}
+
+.hide {
+    display: none;
+}
+
+#capture {
+    max-width: 500px;
+}
+
+.layout-box {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.layout-box li {
+    margin-right: 20px;
+}
+
+.layout-box li a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: #eee;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: 0.2s all ease;
+    -webkit-transition: 0.2s all ease;
+}
+
+.layout-box li.active a {
+    border: 2px solid #ff5f57;
+    background: rgba(255, 95, 87, 0.1);
+}
+
+.layout-box li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media only all and (max-width: 1199px) {
+    /* .container {
+    max-width: 900px;
+    min-width: 900px;
+  } */
+
+    .navigation ul li {
+        margin-left: 25px;
+    }
+
+    .navigation ul li a {
+        font-size: 14px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    header.fixHeader .header {
+        height: 60px;
+    }
+
+    .mockup-right {
+        width: 350px;
+        padding: 30px;
+        box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.14);
+        position: sticky;
+        /* top: 80px; */
+        border-radius: 20px;
+    }
+
+
+    .mockup-right hr {
+        margin: 20px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .colorBox {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .clrRound {
+        width: 25px;
+        height: 25px;
+        margin-top: -12px;
+    }
+
+    .clrName {
+        font-size: 16px;
+    }
+
+    .uploadImg {
+        height: 60px;
+    }
+
+    .inpBox {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    #previewImage {
+        border-radius: 15px;
+    }
+
+    .rel-box li {
+        height: 165px;
+    }
+
+    .relatedContainer h3 {
+        font-size: 30px;
+    }
+}
+
+
+@media only all and (max-width: 990px) {
+    .mockup-box {
+        display: block;
+    }
+
+    .mockup-left {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .mockup-right {
+        position: relative;
+        top: 0;
+        margin: 30px auto 0;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    #capture {
+        margin: auto;
+    }
+}
+
+@media only all and (max-width: 768px) {
+    .mockup-left h2 {
+        font-size: 24px;
+    }
+}
+
+@media only all and (max-width: 640px) {
+    .mockup-right {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .mockup-left h2 {
+        font-size: 18px;
+    }
+}
