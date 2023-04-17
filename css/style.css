@@ -508,9 +508,9 @@ header.fixHeader .header {
 }
 
 .abs-div2 {
-    left: 23%;
-    top: 53%;
-    width: 55%;
+    left: 22%;
+    top: 54%;
+    width: 56%;
     height: 28%;
 }
 
@@ -527,7 +527,7 @@ header.fixHeader .header {
 }
 
 .border-radius {
-    border-radius: 50%;
+    border-radius: 25%;
 }
 
 .hide {
