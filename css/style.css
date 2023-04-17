@@ -494,10 +494,10 @@ header.fixHeader .header {
 }
 
 .abs-div1 {
-    left: 15%;
-    top: 18%;
-    width: 70%;
-    height: 46%;
+    left: 23%;
+    top: 53%;
+    width: 55%;
+    height: 28%;
 }
 
 .abs-div1-attand1 {
@@ -508,10 +508,10 @@ header.fixHeader .header {
 }
 
 .abs-div2 {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 73%;
+    left: 23%;
+    top: 53%;
+    width: 55%;
+    height: 28%;
 }
 
 .mainFrame {
@@ -524,6 +524,10 @@ header.fixHeader .header {
     height: 100%;
     object-fit: cover;
     background: #fff;
+}
+
+.border-radius {
+    border-radius: 50%;
 }
 
 .hide {
